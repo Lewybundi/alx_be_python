@@ -11,7 +11,7 @@ def main():
     time_bound = input("Is it time-bound? (yes/no): ").lower()
 
     # Process and generate reminder
-    print("\nReminder:", end=" ")
+    print("\nReminder: ", end="")
     match priority:
         case "high":
             if time_bound == "yes":
