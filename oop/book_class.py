@@ -7,13 +7,13 @@ class Book:
         self.year = year
     
     def __str__(self):
-        return f"Book: {self.title} by {self.author} ({self.year})"
+        return f"{self.title} by {self.author}, published in {self.year}"
     
     def __repr__(self):
-        return f"Book(title='{self.title}', author='{self.author}', year={self.year})"
+        return f"Book('{self.title}', '{self.author}', {self.year})"
     
     def __del__(self):
-        print(f"Deleting book: {self.title}")
+        print(f"Deleting {self.title}")
 
 
 class EBook(Book):
@@ -22,13 +22,13 @@ class EBook(Book):
         self.file_size = file_size
     
     def __str__(self):
-        return f"EBook: {self.title} by {self.author} ({self.year}), File Size: {self.file_size}KB"
+        return f"{self.title} by {self.author}, published in {self.year} [File Size: {self.file_size}KB]"
     
     def __repr__(self):
-        return f"EBook(title='{self.title}', author='{self.author}', year={self.year}, file_size={self.file_size})"
+        return f"EBook('{self.title}', '{self.author}', {self.year}, {self.file_size})"
     
     def __del__(self):
-        print(f"Deleting ebook: {self.title}")
+        print(f"Deleting {self.title}")
 
 
 class PrintBook(Book):
@@ -37,13 +37,13 @@ class PrintBook(Book):
         self.page_count = page_count
     
     def __str__(self):
-        return f"PrintBook: {self.title} by {self.author} ({self.year}), Page Count: {self.page_count}"
+        return f"{self.title} by {self.author}, published in {self.year} [Pages: {self.page_count}]"
     
     def __repr__(self):
-        return f"PrintBook(title='{self.title}', author='{self.author}', year={self.year}, page_count={self.page_count})"
+        return f"PrintBook('{self.title}', '{self.author}', {self.year}, {self.page_count})"
     
     def __del__(self):
-        print(f"Deleting print book: {self.title}")
+        print(f"Deleting {self.title}")
 
 
 class Library:
@@ -61,9 +61,9 @@ class Library:
             print(book)
     
     def __repr__(self):
-        return f"Library(books={self.books})"
+        return f"Library({self.books})"
     
     def __del__(self):
-        print("Deleting library and all its books")
+        print("Deleting library")
         for book in self.books:
             book.__del__()
